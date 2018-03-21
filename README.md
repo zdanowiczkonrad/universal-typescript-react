@@ -14,17 +14,20 @@ Checklist
 * [x] HMR
 * [x] fork-ts-checker (async compile)
 * [x] tslint
-* [ ] Babel
-* [ ] es6 polyfills
+* [ ] Babel (don't need?)
+* [x] Promise polyfill
+* [ ] Optional es6-shim
 * [ ] Tests (Karma + Jasmine)
 * [ ] Vendor bundle/chunks
 * [ ] Styles support (LESS/SASS)
 * [ ] React router
+* [ ] Server support for router paths
 * [ ] Redux
+* [ ] Webpack define plugin
 * [ ] Universal rendering
 * [ ] AMD/code splitting
 * [ ] Sentry
-* [ ]
+* [ ] 
 
 
 
