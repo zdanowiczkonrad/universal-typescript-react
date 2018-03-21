@@ -36,7 +36,12 @@ module.exports = {
       {
         test: /\.tsx?$/,
         use: [
-          { loader: 'ts-loader', options: { happyPackMode: true } }
+          { loader: 'ts-loader',
+          options: {
+             happyPackMode: true,
+             transpileOnly: true // for 
+            } 
+          }
         ],
         exclude: /node_modules/,
       },
@@ -72,6 +77,9 @@ module.exports = {
   },
 
   resolve: {
+    alias: {
+      '@': path.resolve(__dirname, 'src/')
+    },
     extensions: [".tsx", ".ts", ".js"]
   }
 };

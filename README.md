@@ -8,21 +8,30 @@ Checklist
 * [x] Yarn 1.5
 * [x] Webpack 4
 * [x] TypeScript 2
+* [x] TypeScript import alias
 * [x] React 16
+* [?] Sourcemaps
 * [x] HMR
 * [x] fork-ts-checker (async compile)
 * [x] tslint
 * [ ] Babel
 * [ ] Tests (Karma + Jasmine)
-* [ ] Code splitting
-* [ ] Styles support
-* [ ] Universal
+* [ ] Vendor bundle/chunks
+* [ ] Styles support (LESS/SASS)
+* [ ] React router
 * [ ] Redux
+* [ ] Universal rendering
+* [ ] AMD/code splitting
+* [ ] Sentry
+* [ ]
+
 
 
 
 ### Prerequisites
 
+Yarn >= 1.0
+Node >= 8.0 
 Have a Yarn installed. Then:
 
 ```

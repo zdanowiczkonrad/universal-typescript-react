@@ -1,7 +1,7 @@
 import { AppContainer } from 'react-hot-loader';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import App from './App';
+import App from '@/App';
 
 const rootEl = document.getElementById('root');
 const render = (Component: typeof App) =>

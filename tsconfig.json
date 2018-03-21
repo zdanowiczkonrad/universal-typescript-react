@@ -4,6 +4,12 @@
     "src/**/*.tsx"
   ],
   "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "src/*"
+      ]
+    },
     "allowSyntheticDefaultImports": false,
     "target": "es5",
     "downlevelIteration": true,
