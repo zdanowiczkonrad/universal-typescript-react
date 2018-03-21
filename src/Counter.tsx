@@ -1,18 +1,23 @@
 import * as React from 'react';
+import { sum } from '@/calculator/Calculator';
 
 export default class Counter extends React.Component<{}, { counter: number }> {
   interval: number;
+  promise: Promise<void>;
   constructor(props: {}) {
     super(props);
     this.state = { counter: 0 };
   }
 
   componentDidMount() {
-    this.interval = setInterval(this.tick.bind(this), 1000);
+    this.promise = new Promise((resolve) => {
+      resolve();
+    });
+    this.interval = window.setInterval(this.tick, 1000);
   }
 
   tick = () => {
-    this.setState({ counter: this.state.counter + 2 });
+    this.setState({ counter: sum(this.state.counter, 2) });
   }
 
   componentWillUnmount() {

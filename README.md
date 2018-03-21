@@ -15,6 +15,7 @@ Checklist
 * [x] fork-ts-checker (async compile)
 * [x] tslint
 * [ ] Babel
+* [ ] es6 polyfills
 * [ ] Tests (Karma + Jasmine)
 * [ ] Vendor bundle/chunks
 * [ ] Styles support (LESS/SASS)

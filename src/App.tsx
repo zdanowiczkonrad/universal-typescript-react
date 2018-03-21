@@ -9,6 +9,7 @@ import Counter from '@/Counter';
 // You can ignore this warning. For details, see:
 // https://github.com/reactjs/react-router/issues/2182
 export default class App extends React.Component {
+
   render() {
     return (
       <Layout>
