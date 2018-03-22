@@ -1,4 +1,4 @@
-import { sum } from '../src/calculator/Calculator';
+import { sum } from '@/calculator/Calculator';
 console.log('asd');
 describe('Caculator', () => {
     it('Should add two numbers', () => {
