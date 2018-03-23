@@ -3,7 +3,7 @@ const webpack         = require('webpack');
 const { resolve }       = require('path');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
-
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const SLASH_ESCAPE_LESS_WITH_EXTRACT_PLUGIN = "\\/\\/";
 
 // TODO later
@@ -20,12 +20,13 @@ module.exports = {
 //   context: resolve(__dirname, 'src'), <- what was that for?!
 /* entry - to be defined by each env */
     output: { // this looks identical for both 
-        filename: '[name].js',
+        filename: '[name].[chunkhash].js',
+        chunkFilename: '[name].[chunkhash].js',
         // the output bundle
 
         path: resolve(__dirname, 'dist'),
 
-        publicPath: '/static/'
+        publicPath: '/'
     // necessary for HMR to know where to load the hot update chunks
   },
 
@@ -129,12 +130,15 @@ module.exports = {
   },
   plugins: [
     new ExtractTextPlugin({
-        filename: '[name].css'
+        filename: '[name].[chunkhash].css'
     }),
     new ForkTsCheckerWebpackPlugin({
         tslint: true,
         checkSyntacticErrors: true,
         // watch: ['./src'] // optional but improves performance (fewer stat calls)
+      }),
+      new HtmlWebpackPlugin({
+        title: 'Dependencies'
       }),
     // new StyleLintPlugin(),
     // new webpack.DefinePlugin({

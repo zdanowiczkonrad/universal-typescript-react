@@ -4,8 +4,19 @@ const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const merge  = require('webpack-merge');
 const commonConfig = require('./webpack.config.common');
 const { resolve }       = require('path');
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = merge(commonConfig, {
+  output: { // this looks identical for both 
+      filename: '[name].js',
+      chunkFilename: '[name].js',
+      // the output bundle
+
+      path: resolve(__dirname, 'dist'),
+
+      publicPath: '/static/'
+  // necessary for HMR to know where to load the hot update chunks
+  },
   entry: [
     'react-hot-loader/patch',
     // activate HMR for React
@@ -31,7 +42,13 @@ module.exports = merge(commonConfig, {
 
     new webpack.NoEmitOnErrorsPlugin(),
     // do not emit compiled assets that include errors
+
+    new ExtractTextPlugin({
+      filename: '[name].css'
+  }),
   ],
+
+  
 
   devServer: {
     host: 'localhost',

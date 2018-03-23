@@ -2,6 +2,7 @@ var webpack = require('webpack');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const merge  = require('webpack-merge');
 const commonConfig = require('./webpack.config.common');
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = merge(commonConfig, {
   entry: {
@@ -19,5 +20,11 @@ module.exports = merge(commonConfig, {
         }
       }
     }
-  }
+  },
+  plugins: [
+    new ExtractTextPlugin({
+      filename: '[name].css'
+    }),
+    new webpack.HashedModuleIdsPlugin()
+  ]
 });
