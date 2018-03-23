@@ -43,9 +43,23 @@ module.exports = {
         {
             test: /\.less$/,
             loaders: ExtractTextPlugin.extract({fallback: 'style-loader', use: [
-              "css-loader",
-              'postcss-loader',
-              "less-loader"]}),
+              {
+                  loader: "css-loader",
+                  options: {
+                      sourceMap: true,
+                      minimize: true
+                  }
+               },  {
+                loader: "postcss-loader",
+                options: {
+                    sourceMap: true
+                }
+             }, {
+                loader: "less-loader",
+                options: {
+                    sourceMap: true
+                }
+             }]}),
         }, 
         {
             test: /\.scss$/,
