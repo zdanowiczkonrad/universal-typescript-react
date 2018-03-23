@@ -3,6 +3,9 @@ const webpack         = require('webpack');
 const { resolve }       = require('path');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+
+const SLASH_ESCAPE_LESS_WITH_EXTRACT_PLUGIN = "\\/\\/";
+
 // TODO later
 //const { FRONTEND_URL, BACKEND_URL, STRIPE_API_KEY }  = require('./env.config');
 
@@ -42,6 +45,7 @@ module.exports = {
         }, 
         {
             test: /\.less$/,
+            exclude: /node_modules/,
             loaders: ExtractTextPlugin.extract({fallback: 'style-loader', use: [
               {
                   loader: "css-loader",
@@ -57,12 +61,16 @@ module.exports = {
              }, {
                 loader: "less-loader",
                 options: {
-                    sourceMap: true
+                    sourceMap: true,
+                    modifyVars: {
+                        assets: `\'${SLASH_ESCAPE_LESS_WITH_EXTRACT_PLUGIN}localhost:3000\'`
+                    }
                 }
              }]}),
         }, 
         {
             test: /\.scss$/,
+            exclude: /node_modules/,
             loaders: ExtractTextPlugin.extract({fallback: 'style-loader', use: [  {
                 loader: "css-loader",
                 options: {
@@ -83,6 +91,7 @@ module.exports = {
           }, 
         {
         test: /\.css$/,
+        exclude: /node_modules/,
         loaders: ExtractTextPlugin.extract({fallback: 'style-loader', use: [{
             loader: "css-loader",
             options: {
