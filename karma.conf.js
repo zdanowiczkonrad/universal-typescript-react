@@ -1,7 +1,7 @@
 /* eslint-disable no-var, strict */
 'use strict';
 
-var webpackConfig = require('./webpack.config.production.js');
+var webpackConfig = require('./webpack.config.js')('dev');
 
 module.exports = function(config) {
   // Documentation: https://karma-runner.github.io/0.13/config/configuration-file.html

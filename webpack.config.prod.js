@@ -1,17 +1,17 @@
-var path = require('path');
 var webpack = require('webpack');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const merge  = require('webpack-merge');
 const commonConfig = require('./webpack.config.common');
+const { resolve }       = require('path');
 
 module.exports = merge(commonConfig, {
   entry: './src/index.tsx',
 
-  output: {
-    filename: 'static/bundle.js',
-    path: path.resolve(__dirname, 'dist'),
-    publicPath: '/'
-  },
+  // output: {
+  //   filename: 'static/bundle.js',
+  //   path: resolve(__dirname, 'dist'),
+  //   publicPath: '/'
+  // },
 
   devtool: 'source-map',
 

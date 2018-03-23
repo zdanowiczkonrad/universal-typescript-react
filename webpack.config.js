@@ -1,4 +1,6 @@
 module.exports = function(env) {
-    return require(`./webpack.config.${env}.js`);
+    const config = `./webpack.config.${env}.js`;
+    console.log('Building webpack using ' + config);
+    return require(config);
   };
   

@@ -3,7 +3,18 @@ var webpack = require('webpack');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const merge  = require('webpack-merge');
 const commonConfig = require('./webpack.config.common');
+const { resolve }       = require('path');
+
 module.exports = merge(commonConfig, {
+//   output: { // this looks identical for both 
+//     filename: 'bundle.js',
+//     // the output bundle
+
+//     path: resolve(__dirname, 'dist'),
+
+//     publicPath: '/static/'
+// // necessary for HMR to know where to load the hot update chunks
+// },
   entry: [
     'react-hot-loader/patch',
     // activate HMR for React

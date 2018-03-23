@@ -1,8 +1,7 @@
 // test file
 import { shallow, mount, render } from 'enzyme';
 import React from 'react';
-import Counter from '../src/Counter';
-
+import Counter from '@/Counter';
 
 
 describe('Counter', () => {

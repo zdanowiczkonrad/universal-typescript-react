@@ -39,13 +39,15 @@ module.exports = {
                 }
             ],
             exclude: /node_modules/,
-        }, {
-        test: /\.css$/,
-        use: ['style-loader', 'css-loader?modules', 'postcss-loader'],
-      }, {
-        test: /\.json$/,
-          loader: 'json-loader'
-      }, 
+        }, 
+    //     {
+    //     test: /\.css$/,
+    //     use: ['style-loader', 'css-loader?modules', 'postcss-loader'],
+    //   },
+    //    {
+    //     test: /\.json$/,
+    //       loader: 'json-loader'
+    //   }, 
     //   {
     //     test: /\.scss$/,
     //     loaders: [
@@ -81,7 +83,7 @@ module.exports = {
     new ForkTsCheckerWebpackPlugin({
         tslint: true,
         checkSyntacticErrors: true,
-        watch: ['./src'] // optional but improves performance (fewer stat calls)
+        // watch: ['./src'] // optional but improves performance (fewer stat calls)
       }),
     // new StyleLintPlugin(),
     // new webpack.DefinePlugin({
