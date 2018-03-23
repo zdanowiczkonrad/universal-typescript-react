@@ -1,8 +1,10 @@
 var path = require('path');
 var webpack = require('webpack');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
+const merge  = require('webpack-merge');
+const commonConfig = require('./webpack.config.common');
 
-module.exports = {
+module.exports = merge(commonConfig, {
   entry: './src/index.tsx',
 
   output: {
@@ -23,19 +25,5 @@ module.exports = {
         exclude: /node_modules/
       }
     ]
-  },
-
-  plugins: [
-    new ForkTsCheckerWebpackPlugin({
-      tslint: true,
-      checkSyntacticErrors: true
-    }),
-  ],
-
-  resolve: {
-    alias: {
-      '@': path.resolve(__dirname, 'src/')
-    },
-    extensions: [".tsx", ".ts", ".js"]
   }
-};
+});

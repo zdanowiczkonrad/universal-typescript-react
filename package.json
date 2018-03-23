@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "Boilerplate for ReactJS project with hot code reloading",
   "scripts": {
-    "start": "webpack-dev-server --mode development",
+    "start": "webpack-dev-server --mode development --config webpack.config.dev.js",
     "prebuild": "rimraf dist",
-    "build": "webpack --mode production --config webpack.config.production.js",
+    "build": "webpack --mode production --config webpack.config.js  -p --env=dev",
     "postbuild": "copyfiles index.html dist",
     "lint": "tslint -c tslint.json 'src/**/*.{ts,tsx}'",
     "test": "karma start --reporters mocha,junit --single-run --browsers PhantomJS"
@@ -33,6 +33,7 @@
   "homepage": "https://github.com/gaearon/react-hot-boilerplate",
   "devDependencies": {
     "@types/jasmine": "^2.8.6",
+    "@types/lodash": "^4.14.106",
     "@types/react": "^16.0.40",
     "@types/react-dom": "^16.0.4",
     "@types/react-hot-loader": "^3.0.6",
@@ -40,6 +41,7 @@
     "copyfiles": "^2.0.0",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "fork-ts-checker-webpack-plugin": "^0.4.1",
     "jasmine": "^3.1.0",
     "jasmine-core": "^3.1.0",
@@ -61,10 +63,12 @@
     "typescript": "^2.7.2",
     "webpack": "^4.2.0",
     "webpack-cli": "^2.0.12",
-    "webpack-dev-server": "^3.1.1"
+    "webpack-dev-server": "^3.1.1",
+    "webpack-merge": "^4.1.2"
   },
   "dependencies": {
     "es6-promise": "^4.2.4",
+    "lodash": "^4.17.5",
     "react": "^16.2.0",
     "react-dom": "^16.2.0"
   }

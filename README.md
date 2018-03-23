@@ -4,7 +4,7 @@ universal-typescript-react
 **inspired by https://github.com/gaearon/react-hot-boilerplate/**
 
 Checklist
-* [ ] Node 8
+* [x] Node 8
 * [x] Yarn 1.5
 * [x] Webpack 4
 * [x] TypeScript 2
@@ -17,7 +17,9 @@ Checklist
 * [ ] Babel (don't need?)
 * [x] Promise polyfill
 * [ ] Optional es6-shim
-* [ ] Tests (Karma + Jasmine)
+* [x] Tests (Karma + Jasmine)
+* [x] Enzyme
+* [x] Splitted configs
 * [ ] Vendor bundle/chunks
 * [ ] Styles support (LESS/SASS)
 * [ ] React router
