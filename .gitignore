@@ -1,4 +1,4 @@
 node_modules
-/TESTS-*
+TESTS-*
 yarn-error.log
 dist
