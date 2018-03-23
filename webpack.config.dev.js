@@ -6,15 +6,6 @@ const commonConfig = require('./webpack.config.common');
 const { resolve }       = require('path');
 
 module.exports = merge(commonConfig, {
-//   output: { // this looks identical for both 
-//     filename: 'bundle.js',
-//     // the output bundle
-
-//     path: resolve(__dirname, 'dist'),
-
-//     publicPath: '/static/'
-// // necessary for HMR to know where to load the hot update chunks
-// },
   entry: [
     'react-hot-loader/patch',
     // activate HMR for React
@@ -31,7 +22,6 @@ module.exports = merge(commonConfig, {
     // the entry point of our app
   ],
   devtool: 'inline-source-map',
-
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     // enable HMR globally
