@@ -38,24 +38,34 @@ module.exports = {
                 } 
             }
             ],
-            // exclude: /node_modules/,
+            exclude: /node_modules/,
         }, 
-    //     {
-    //     test: /\.css$/,
-    //     use: ['style-loader', 'css-loader?modules', 'postcss-loader'],
-    //   },
-    //    {
-    //     test: /\.json$/,
-    //       loader: 'json-loader'
-    //   }, 
-    //   {
-    //     test: /\.scss$/,
-    //     loaders: [
-    //       'style-loader',
-    //       'css-loader?modules',
-    //       'postcss-loader',
-    //       'sass-loader'],
-    //   }, 
+        {
+            test: /\.less$/,
+            loaders: ExtractTextPlugin.extract({fallback: 'style-loader', use: [
+              "css-loader",
+              'postcss-loader',
+              "less-loader"]}),
+        }, 
+        {
+            test: /\.scss$/,
+            loaders: ExtractTextPlugin.extract({fallback: 'style-loader', use: [
+                "css-loader",
+                'postcss-loader',
+                "sass-loader"]}),
+          }, 
+        {
+        test: /\.css$/,
+        loaders: ExtractTextPlugin.extract({fallback: 'style-loader', use: [
+            "css-loader",
+            'postcss-loader'
+        ]}), 
+        }, 
+       {
+        test: /\.json$/,
+          loader: 'json-loader'
+      }, 
+
       {
         test: /\.(jpe?g|png|gif|svg)$/i,
         loaders: [
@@ -63,14 +73,7 @@ module.exports = {
           'image-webpack-loader?bypassOnDebug&optipng.optimizationLevel=7&gifsicle.interlaced=false',
         ],
       }, 
-    //   {
-    //     test: /\.less$/,
-    //     loaders: ExtractTextPlugin.extract({fallback: 'style-loader', use: [
 
-    //       "css-loader", // translates CSS into CommonJS
-    //       'postcss-loader',
-    //       "less-loader"]}), // compiles Less to CSS
-    // }, 
     {
         test: /\.html$/,
         use: {
@@ -80,6 +83,9 @@ module.exports = {
     ],
   },
   plugins: [
+    new ExtractTextPlugin({
+        filename: '[name].css'
+    }),
     new ForkTsCheckerWebpackPlugin({
         tslint: true,
         checkSyntacticErrors: true,

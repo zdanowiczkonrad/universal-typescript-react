@@ -10,7 +10,7 @@ Checklist
 * [x] TypeScript 2
 * [x] TypeScript import alias
 * [x] React 16
-* [?] Sourcemaps
+* [x] Sourcemaps (prod + dev)
 * [x] HMR
 * [x] fork-ts-checker (async compile)
 * [x] tslint

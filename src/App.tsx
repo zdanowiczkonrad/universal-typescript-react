@@ -1,6 +1,9 @@
 import * as React from 'react';
 import Layout from '@/Layout';
 import Counter from '@/Counter';
+import './App.css';
+import './App.less';
+import './App.scss';
 
 // If you use React Router, make this component
 // render <Router> with your routes. Currently,
