@@ -6,15 +6,15 @@ const commonConfig = require('./webpack.config.common');
 module.exports = merge(commonConfig, {
   entry: './src/index.tsx',
   devtool: 'source-map',
-  module: {
-    rules: [
-      {
-        test: /\.tsx?$/,
-        use: [
-          { loader: 'ts-loader', options: { happyPackMode: true } }
-        ],
-        exclude: /node_modules/
-      }
-    ]
-  }
+  // module: {
+  //   rules: [
+  //     {
+  //       test: /\.tsx?$/,
+  //       use: [
+  //         { loader: 'ts-loader', options: { happyPackMode: true } }
+  //       ],
+  //       exclude: /node_modules/
+  //     }
+  //   ]
+  // }
 });
