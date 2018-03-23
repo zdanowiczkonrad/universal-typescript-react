@@ -63,17 +63,38 @@ module.exports = {
         }, 
         {
             test: /\.scss$/,
-            loaders: ExtractTextPlugin.extract({fallback: 'style-loader', use: [
-                "css-loader",
-                'postcss-loader',
-                "sass-loader"]}),
+            loaders: ExtractTextPlugin.extract({fallback: 'style-loader', use: [  {
+                loader: "css-loader",
+                options: {
+                    sourceMap: true,
+                    minimize: true
+                }
+             },  {
+              loader: "postcss-loader",
+              options: {
+                  sourceMap: true
+              }
+           }, {
+              loader: "sass-loader",
+              options: {
+                  sourceMap: true
+              }
+           }]}),
           }, 
         {
         test: /\.css$/,
-        loaders: ExtractTextPlugin.extract({fallback: 'style-loader', use: [
-            "css-loader",
-            'postcss-loader'
-        ]}), 
+        loaders: ExtractTextPlugin.extract({fallback: 'style-loader', use: [{
+            loader: "css-loader",
+            options: {
+                sourceMap: true,
+                minimize: true
+            }
+         },  {
+          loader: "postcss-loader",
+          options: {
+              sourceMap: true
+          }
+       }]}), 
         }, 
        {
         test: /\.json$/,
