@@ -14,14 +14,14 @@ Checklist
 * [x] HMR
 * [x] fork-ts-checker (async compile)
 * [x] tslint
-* [ ] Babel (don't need?)
+* [x] Babel (don't need?) - yes. needed only for karma polyfill
 * [x] Promise polyfill
 * [ ] Optional es6-shim
 * [x] Tests (Karma + Jasmine)
 * [x] Enzyme
 * [x] Splitted configs
-* [ ] Vendor bundle/chunks
-* [ ] Styles support (LESS/SASS)
+* [x] Vendor bundle/chunks
+* [x] Styles support (LESS/SASS)
 * [ ] React router
 * [ ] Server support for router paths
 * [ ] Redux
