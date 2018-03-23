@@ -36,9 +36,9 @@ module.exports = {
                     happyPackMode: true,
                     transpileOnly: true
                 } 
-                }
+            }
             ],
-            exclude: /node_modules/,
+            // exclude: /node_modules/,
         }, 
     //     {
     //     test: /\.css$/,
