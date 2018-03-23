@@ -17,7 +17,7 @@ module.exports = {
 //   context: resolve(__dirname, 'src'), <- what was that for?!
 /* entry - to be defined by each env */
     output: { // this looks identical for both 
-        filename: 'bundle.js',
+        filename: '[name].js',
         // the output bundle
 
         path: resolve(__dirname, 'dist'),
