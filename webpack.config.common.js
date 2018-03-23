@@ -52,7 +52,7 @@ module.exports = {
                },  {
                 loader: "postcss-loader",
                 options: {
-                    sourceMap: true
+                    sourceMap: 'inline'
                 }
              }, {
                 loader: "less-loader",
@@ -72,7 +72,7 @@ module.exports = {
              },  {
               loader: "postcss-loader",
               options: {
-                  sourceMap: true
+                  sourceMap: 'inline'
               }
            }, {
               loader: "sass-loader",

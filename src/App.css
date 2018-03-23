@@ -1,5 +1,9 @@
 body {
     font-size: 40px;
-    -webkit-border-radius: 5px;
     border-radius: 5px;
+}
+
+
+::placeholder {
+    display: block;
 }
