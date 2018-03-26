@@ -7,7 +7,8 @@
     "prebuild": "rimraf dist",
     "build": "webpack --mode production --config webpack.config.js  -p --env=prod",
     "lint": "tslint -c tslint.json 'src/**/*.{ts,tsx}'",
-    "test": "karma start --reporters mocha,junit --single-run --browsers PhantomJS"
+    "test": "karma start --reporters mocha,junit --single-run --browsers PhantomJS",
+    "server": "cd dist && python -m SimpleHTTPServer 8080"
   },
   "repository": {
     "type": "git",
@@ -77,7 +78,6 @@
     "webpack-merge": "^4.1.2"
   },
   "dependencies": {
-    "@types/webpack-env": "^1.13.5",
     "es6-promise": "^4.2.4",
     "lodash": "^4.17.5",
     "npm": "^5.7.1",
