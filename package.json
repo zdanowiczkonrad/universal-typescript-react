@@ -32,6 +32,7 @@
     "@types/react": "^16.0.40",
     "@types/react-dom": "^16.0.4",
     "@types/react-hot-loader": "^3.0.6",
+    "@types/react-loadable": "^5.3.3",
     "@types/react-router": "^4.0.23",
     "autoprefixer": "^8.2.0",
     "babel-polyfill": "^6.26.0",
@@ -41,6 +42,7 @@
     "enzyme-adapter-react-16": "^1.1.1",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "fork-ts-checker-webpack-plugin": "^0.4.1",
+    "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.1.0",
     "jasmine": "^3.1.0",
     "jasmine-core": "^3.1.0",
@@ -75,10 +77,12 @@
     "webpack-merge": "^4.1.2"
   },
   "dependencies": {
+    "@types/webpack-env": "^1.13.5",
     "es6-promise": "^4.2.4",
     "lodash": "^4.17.5",
     "npm": "^5.7.1",
     "react": "^16.2.0",
-    "react-dom": "^16.2.0"
+    "react-dom": "^16.2.0",
+    "react-loadable": "^5.3.1"
   }
 }

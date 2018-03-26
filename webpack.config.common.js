@@ -138,7 +138,8 @@ module.exports = {
         // watch: ['./src'] // optional but improves performance (fewer stat calls)
       }),
       new HtmlWebpackPlugin({
-        title: 'Dependencies'
+        title: 'Dependencies',
+        template: 'src/index.html'
       }),
     // new StyleLintPlugin(),
     // new webpack.DefinePlugin({
