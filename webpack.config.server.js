@@ -11,11 +11,23 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.tsx?$/,
-                loader: ['ts-loader'],
-                exclude: /node_modules/
+              test: /\.tsx?$/,
+              use: [
+                  { loader: 'ts-loader',
+                  options: {
+                      happyPackMode: true,
+                      transpileOnly: true
+                  } 
+              }
+              ],
+              exclude: [/node_modules/],
             },
-            { test: /\.(css|less|scss)$/, loader: 'ignore-loader' }
+            { test: /\.(css|less|scss)$/, loader: 'ignore-loader' },
+            {
+              test: /\.html$/,
+                loader: 'raw-loader',
+                exclude: /node_modules/
+            }
         ],
     },
     resolve: {

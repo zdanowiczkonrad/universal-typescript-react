@@ -26,11 +26,9 @@ Checklist
 * [ ] Server support for router paths
 * [ ] Redux
 * [ ] Webpack define plugin
-* [ ] Universal rendering
+* [x] Universal rendering
 * [x] AMD/code splitting <- fancy usage will require babel
 * [ ] Sentry
-
-
 
 
 ### Prerequisites
@@ -43,20 +41,27 @@ Have a Yarn installed. Then:
 yarn global add typescript tslint
 ```
 
-### Usage
-
+### Development
 ```
 yarn install
 yarn start
 open http://localhost:3000
 ```
 
-### Building
+### Production
 
 A basic production script is included that builds your app to a `dist` folder
 
 ```
-yarn prebuild
 yarn build
-yarn postbuild
+yarn server
+```
+
+### SSR
+
+Draft and WIP
+
+```
+yarn build
+yarn ssr-server
 ```
