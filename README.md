@@ -27,9 +27,8 @@ Checklist
 * [ ] Redux
 * [ ] Webpack define plugin
 * [ ] Universal rendering
-* [ ] AMD/code splitting <- fancy usage will require babel
+* [x] AMD/code splitting <- fancy usage will require babel
 * [ ] Sentry
-* [ ] 
 
 
 
