@@ -2,3 +2,4 @@ node_modules
 TESTS-*
 yarn-error.log
 dist
+/server

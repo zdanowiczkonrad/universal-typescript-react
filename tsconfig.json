@@ -37,5 +37,8 @@
     "skipLibCheck": true,
     "strictNullChecks": false,
     "suppressImplicitAnyIndexErrors": true
-  }
+  },
+  "files": [
+    "require.d.ts"
+  ]
 }
