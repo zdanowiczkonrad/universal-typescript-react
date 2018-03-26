@@ -44,7 +44,8 @@ module.exports = merge(commonConfig, {
     // do not emit compiled assets that include errors
 
     new ExtractTextPlugin({
-      filename: '[name].css'
+      filename: '[name].css',
+      allChunks: true
   })
   ],
 

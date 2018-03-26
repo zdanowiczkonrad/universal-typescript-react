@@ -24,7 +24,8 @@ module.exports = merge(commonConfig, {
   },
   plugins: [
     new ExtractTextPlugin({
-      filename: '[name].[chunkhash].css'
+      filename: '[name].[chunkhash].css',
+      allChunks: true
     }),
     new HtmlWebpackPlugin({
       title: 'App',
