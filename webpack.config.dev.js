@@ -45,7 +45,7 @@ module.exports = merge(commonConfig, {
 
     new ExtractTextPlugin({
       filename: '[name].css'
-  }),
+  })
   ],
 
   

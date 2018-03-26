@@ -136,11 +136,7 @@ module.exports = {
         tslint: true,
         checkSyntacticErrors: true,
         // watch: ['./src'] // optional but improves performance (fewer stat calls)
-      }),
-      new HtmlWebpackPlugin({
-        title: 'Dependencies',
-        template: 'src/index.html'
-      }),
+      })
     // new StyleLintPlugin(),
     // new webpack.DefinePlugin({
     //     FRONTEND_SERVER_URL: JSON.stringify(FRONTEND_URL),
