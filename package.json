@@ -5,7 +5,7 @@
   "scripts": {
     "start": "webpack-dev-server --mode development --config webpack.config.dev.js",
     "prebuild": "rimraf dist",
-    "build": "webpack --mode production --config webpack.config.js  -p --env=prod --json > compilation-stats.json",
+    "build": "webpack --mode production --config webpack.config.js  -p --env=prod",
     "lint": "tslint -c tslint.json 'src/**/*.{ts,tsx}'",
     "test": "karma start --reporters mocha,junit --single-run --browsers PhantomJS",
     "server": "cd dist && python -m SimpleHTTPServer 8080",

@@ -5,7 +5,7 @@ https://github.com/lith-light-g/universal-react-redux-typescript-starter-kit
 import * as React from 'react';
 import { renderToString, renderToStaticMarkup } from 'react-dom/server';
 import * as express from 'express';
-import * as serialize from 'serialize-javascript';
+// import * as serialize from 'serialize-javascript';
 // import * as webpackDevMiddleware from 'webpack-dev-middleware';
 // import * as webpackHotMiddleware from 'webpack-hot-middleware';
 
@@ -13,22 +13,18 @@ import { Express, Response } from 'express-serve-static-core';
 // import { StaticRouter } from 'react-router-dom';
 // import { matchRoutes, renderRoutes, MatchedRoute } from 'react-router-config';
 import App from '../src/App';
-const indexFile = require('../dist/index.html');
+const indexFile: string = require('../dist/index.html');
 const app: Express = express();
 const port = process.env.PORT || 3000;
 import { JSDOM } from 'jsdom';
 
 const indexDocument = new JSDOM(indexFile).window.document;
-const scripts = Array.from(indexDocument.querySelectorAll('script')).map(script => script.src));
-const styles = Array.from(indexDocument.querySelectorAll('link[rel=stylesheet]')).map(css => css.href));
-console.log('Scripts injected: ' + JSON.stringify(scripts));
-console.log('Styles injected: '  + JSON.stringify(styles));
+const scripts = Array.from(indexDocument.querySelectorAll('script')).map(script => script.src);
+const styles = (Array.from(indexDocument.querySelectorAll('link[rel=stylesheet]')) as HTMLLinkElement[]).map((css => css.href));
 
 app.use(express.static('./dist'));
 
 app.get('*', (_, res: Response) => {
-
-
     const reactAppElement: string = renderToString((
         <App/>    
     ));
@@ -43,7 +39,7 @@ app.get('*', (_, res: Response) => {
         <html lang="fr">
             <head>
                 <title>App (prerender)</title>
-                {styles.map(style => <link rel="stylesheet" href={style} />)}
+                {styles.map(style => <link rel="stylesheet" key={style} href={style}/>)}
             </head>
             <body>
                 <div id="root" dangerouslySetInnerHTML={{ __html: reactAppElement }} />
@@ -55,7 +51,7 @@ app.get('*', (_, res: Response) => {
                     dangerouslySetInnerHTML={{ __html: `window.__REDUX_STATE__=${serialize(store.getState())}` }}
                     charSet="UTF-8"
                 /> */}
-                {scripts.map((script: string) => <script src={script} />)}
+                {scripts.map((script: string) => <script key={script} src={script}/>)}
             </body>
         </html>
     ))}`);

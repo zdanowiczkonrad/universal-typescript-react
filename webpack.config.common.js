@@ -42,7 +42,7 @@ module.exports = {
                 } 
             }
             ],
-            exclude: [/node_modules/,/server.tsx/],
+            exclude: [/node_modules/],
         }, 
         {
             test: /\.less$/,
