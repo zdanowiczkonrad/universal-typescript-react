@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { sum } from '@/calculator/Calculator';
 import { PreloadedComponent } from '@/PreloadedComponent';
+
 export default class Counter extends React.Component<{}, { counter: number }> {
   interval: number;
   promise: Promise<void>;
@@ -28,7 +29,7 @@ export default class Counter extends React.Component<{}, { counter: number }> {
     return (
     <div>
       <h2>Counter: {this.state.counter}</h2>
-      {this.state.counter > 10 && <PreloadedComponent/>}
+      {this.state.counter > -1 && <PreloadedComponent/>}
     </div>
     );
   }

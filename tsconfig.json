@@ -4,13 +4,14 @@
     "src/**/*.tsx"
   ],
   "compilerOptions": {
-    "baseUrl": ".",
+    "baseUrl": "./", // this enables absolute imports
     "paths": {
+      "redux": ["typings/redux.d.ts"], // workaround for outdated redux typins
       "@/*": [
-        "src/*"
+        "src/*" // alias to have import { Button } from '@/components';
       ]
     },
-    "allowSyntheticDefaultImports": false,
+    "allowSyntheticDefaultImports": true, // no errors on commonjs default import
     "target": "es5",
     "downlevelIteration": true,
     "importHelpers": true,
@@ -18,7 +19,7 @@
     "module": "esnext",
     "moduleResolution": "node",
     "jsx": "react",
-    "allowJs": false,
+    "allowJs": true, // allows imnporting JS files
     "checkJs": false,
     "lib": [
       "dom",
@@ -28,7 +29,8 @@
       "esnext"
     ],
     "forceConsistentCasingInFileNames": true,
-    "experimentalDecorators": true,
+    "experimentalDecorators": true, 
+    "emitDecoratorMetadata": true, // needed for the 
     "noImplicitAny": true,
     "noUnusedParameters": true,
     "noImplicitReturns": true,

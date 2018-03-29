@@ -14,9 +14,7 @@ Checklist
 * [x] HMR
 * [x] fork-ts-checker (async compile)
 * [x] tslint
-* [x] Babel (don't need?) - yes. needed only for karma polyfill
 * [x] Promise polyfill
-* [ ] Optional es6-shim
 * [x] Tests (Karma + Jasmine)
 * [x] Enzyme
 * [x] Splitted configs
@@ -29,7 +27,8 @@ Checklist
 * [x] Universal rendering
 * [x] AMD/code splitting <- fancy usage will require babel
 * [ ] Sentry
-
+* [ ] Styleguidist
+* [ ] Redux thunk
 
 ### Prerequisites
 
