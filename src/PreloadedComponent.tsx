@@ -16,7 +16,9 @@ import * as React from 'react';
 // } );
 
 const Loader = Loadable({
-  loader: (() => import('./LazyComponents') as any),
+  loader: (() => {
+    return import('./LazyComponents') as any;
+  }),
   loading() {
     return <div>Loading default component...</div>;
   }

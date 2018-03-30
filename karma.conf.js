@@ -8,6 +8,7 @@ const webpackConfigModule = {
     {
       test: /\.tsx?$/,
       use: [
+          { loader: 'babel-loader' },// resolve dynamic imports to not be dynamic
           { loader: 'ts-loader',
           options: {
               happyPackMode: true,

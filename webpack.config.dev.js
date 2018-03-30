@@ -61,7 +61,23 @@ module.exports = merge(commonConfig, {
       allChunks: true
   })
   ],
-
+  module: {
+    rules: [
+        {
+            test: /\.tsx?$/,
+            use: [
+               { loader: 'babel-loader' },
+                { loader: 'ts-loader',
+                options: {
+                    happyPackMode: true,
+                    transpileOnly: true
+                } 
+            }
+            ],
+            exclude: [/node_modules/],
+        }
+    ]
+  },
   
 
   devServer: {

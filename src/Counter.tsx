@@ -28,8 +28,8 @@ export default class Counter extends React.Component<{}, { counter: number }> {
   render() {
     return (
     <div>
-      <h2>Counters: {this.state.counter}</h2>
-      {this.state.counter > 4 && <PreloadedComponent/>}
+      <h2>Counter: {this.state.counter}</h2>
+      <PreloadedComponent/>
     </div>
     );
   }
