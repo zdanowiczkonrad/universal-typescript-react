@@ -1,11 +1,12 @@
-import { createStore, applyMiddleware, compose } from 'redux';
-const rootReducer = () => ({appName: 'Redux!'});
+import { rootReducer } from '@/reducers';
+import { createStore, applyMiddleware, compose, Reducer } from 'redux';
+
 const composeEnhancers = (
   process.env.NODE_ENV === 'development' &&
   window && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
 ) || compose;
 
-function configureStore(initialState?: any) {
+export function configureStore(initialState?: any) {
   // configure middlewares
   const middlewares: any[] = [
 
@@ -15,12 +16,21 @@ function configureStore(initialState?: any) {
     applyMiddleware(...middlewares)
   );
   // create store
-  return createStore(
+  const storeWithHmr = createStore(
     rootReducer,
     initialState!,
     enhancer
   );
+
+  // https://github.com/reactjs/react-redux/releases/tag/v2.0.0
+  if (module.hot) {
+    module.hot.accept('./reducers', () => {
+      const nextReducer = (require('./reducers') as { rootReducer: Reducer });
+      storeWithHmr.replaceReducer(nextReducer.rootReducer);
+    });
+  } 
+
+  return storeWithHmr;
 }
 
-// pass an optional param to rehydrate state on app start
 export const store = configureStore();

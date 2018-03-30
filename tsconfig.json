@@ -30,7 +30,6 @@
     ],
     "forceConsistentCasingInFileNames": true,
     "experimentalDecorators": true, 
-    "emitDecoratorMetadata": true, // needed for the 
     "noImplicitAny": true,
     "noUnusedParameters": true,
     "noImplicitReturns": true,
