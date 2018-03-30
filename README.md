@@ -1,7 +1,14 @@
 universal-typescript-react
 =====================
+Universal and up to date configuration with TypeScript and React and all modern frontend essentials,
+including dynamic imports, server-side rendering with prehydration and full hot module reload.
+Not forgetting about styles and all you need to develop webapps.
 
-**inspired by https://github.com/gaearon/react-hot-boilerplate/**
+Still a work in progress.
+
+**Heavily inspiried/influenced by:**
+https://github.com/gaearon/react-hot-boilerplate/
+https://github.com/piotrwitek/react-redux-typescript-guide
 
 Checklist
 * [x] Node 8
@@ -10,8 +17,8 @@ Checklist
 * [x] TypeScript 2
 * [x] TypeScript import alias
 * [x] React 16
-* [x] Sourcemaps (prod + dev)
-* [x] HMR
+* [x] Sourcemaps (prod + dev + tests)
+* [x] HMR (with state keeping)
 * [x] fork-ts-checker (async compile)
 * [x] tslint
 * [x] Promise polyfill
@@ -22,10 +29,10 @@ Checklist
 * [x] Styles support (LESS/SASS)
 * [ ] React router
 * [ ] Server support for router paths
-* [ ] Redux
+* [x] Redux
 * [ ] Webpack define plugin
 * [x] Universal rendering
-* [x] AMD/code splitting <- fancy usage will require babel
+* [x] Dynamic imports
 * [ ] Sentry
 * [ ] Styleguidist
 * [ ] Redux thunk
@@ -43,22 +50,32 @@ yarn global add typescript tslint
 ### Development
 ```
 yarn install
+yarn test
 yarn start
 open http://localhost:3000
+```
+
+Watch mode
+
+```
+yarn test:watch
 ```
 
 ### Production
 
 A basic production script is included that builds your app to a `dist` folder
 
+
 ```
+yarn test:phantom
 yarn build
 yarn server
 ```
 
+
 ### SSR
 
-Draft and WIP
+Proof of Concept SSR. TBD
 
 ```
 yarn build
