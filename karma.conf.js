@@ -1,7 +1,7 @@
 /* eslint-disable no-var, strict */
 'use strict';
 process.env.NODE_ENV = 'development';
-const webpackConfig = require('./webpack.config.js')('prod');
+const webpackConfig = require('./webpack.config.js')('dev'); //prod was working as well
 const merge  = require('webpack-merge');
 const webpack = require('webpack');
 
@@ -12,7 +12,7 @@ const webpackConfigModule = {
       use: [
          
           { loader: 'ts-loader',
-          options: {
+            options: {
               happyPackMode: true,
               transpileOnly: false
           } 

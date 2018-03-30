@@ -7,8 +7,9 @@
     "prebuild": "rimraf dist",
     "build": "webpack --mode production --config webpack.config.js  -p --env=prod",
     "lint": "tslint -c tslint.json 'src/**/*.{ts,tsx}'",
-    "test": "karma start --reporters mocha,junit --single-run=true --browsers PhantomJS",
-    "test:chrome": "karma start --reporters mocha,junit --single-run=true --browsers Chrome",
+    "test:phantom": "karma start --reporters mocha,junit --single-run=true --browsers PhantomJS",
+    "test": "karma start --reporters mocha,junit --single-run=true --browsers Chrome",
+    "test:watch": "karma start --reporters mocha,junit --single-run=false --browsers Chrome",
     "server": "cd dist && python -m SimpleHTTPServer 8080",
     "ssr-server": "webpack --config webpack.config.server.js && node server/server.js"
   },
