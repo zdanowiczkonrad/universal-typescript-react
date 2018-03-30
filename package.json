@@ -7,7 +7,8 @@
     "prebuild": "rimraf dist",
     "build": "webpack --mode production --config webpack.config.js  -p --env=prod",
     "lint": "tslint -c tslint.json 'src/**/*.{ts,tsx}'",
-    "test": "karma start --reporters mocha,junit --single-run --browsers PhantomJS",
+    "test": "karma start --reporters mocha,junit --single-run=true --browsers PhantomJS",
+    "test:sourcemaps": "karma start --reporters mocha,junit --single-run=true --browsers Chrome",
     "server": "cd dist && python -m SimpleHTTPServer 8080",
     "ssr-server": "webpack --config webpack.config.server.js && node server/server.js"
   },
@@ -29,6 +30,7 @@
   "license": "MIT",
   "homepage": "https://github.com/zdanowiczkonrad/universal-typescript-react",
   "devDependencies": {
+    "@types/enzyme": "^3.1.9",
     "@types/express": "^4.11.1",
     "@types/express-serve-static-core": "^4.11.1",
     "@types/jasmine": "^2.8.6",

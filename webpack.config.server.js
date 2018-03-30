@@ -4,6 +4,7 @@ var webpack = require('webpack');
 module.exports = {
     target: 'node',
     entry: path.resolve(__dirname, 'src', 'server.tsx'),
+    devtool: 'inline-source-map',
     output: {
         filename: 'server.js',
         path: path.resolve(__dirname, 'server')
