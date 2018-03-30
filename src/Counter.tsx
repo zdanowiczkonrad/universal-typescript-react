@@ -11,7 +11,6 @@ export default class Counter extends React.Component<{}, { counter: number }> {
   }
 
   componentDidMount() {
-    if (Math.random() > -1) throw new Error('aa');
     this.promise = new Promise((resolve) => {
       resolve();
     });
@@ -29,7 +28,7 @@ export default class Counter extends React.Component<{}, { counter: number }> {
   render() {
     return (
     <div>
-      <h2>Counter: {3 / this.state.counter}</h2>
+      <h2>Counterss: {3 / this.state.counter}</h2>
       <PreloadedComponent/>
     </div>
     );

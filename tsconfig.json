@@ -17,10 +17,9 @@
     "downlevelIteration": true,
     "importHelpers": true,
     "sourceMap": true,
-
     "moduleResolution": "node",
     "jsx": "react",
-    "allowJs": true, // allows imnporting JS files
+    "allowJs": true, // allows importing JS files
     "checkJs": false,
     "lib": [
       "dom",

@@ -32,6 +32,7 @@ const { resolve }       = require('path');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = merge(commonConfig, {
+  mode: "development",
   output: { // this looks identical for both 
       filename: '[name].js',
       chunkFilename: '[name].js',
@@ -61,23 +62,23 @@ module.exports = merge(commonConfig, {
       allChunks: true
   })
   ],
-  module: {
-    rules: [
-        {
-            test: /\.tsx?$/,
-            use: [
-               { loader: 'babel-loader' },
-                { loader: 'ts-loader',
-                options: {
-                    happyPackMode: true,
-                    transpileOnly: true
-                } 
-            }
-            ],
-            exclude: [/node_modules/],
-        }
-    ]
-  },
+  // module: {
+  //   rules: [
+  //       {
+  //           test: /\.tsx?$/,
+  //           use: [
+  //             //  { loader: 'babel-loader' },
+  //               { loader: 'ts-loader',
+  //               options: {
+  //                   happyPackMode: true,
+  //                   transpileOnly: true
+  //               } 
+  //           }
+  //           ],
+  //           exclude: [/node_modules/],
+  //       }
+  //   ]
+  // },
   
 
   devServer: {

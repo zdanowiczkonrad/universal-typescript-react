@@ -20,8 +20,8 @@ describe('Counter', () => {
         setTimeout(() => {
             expect(shallowCounter.html())
             .toBe(`<div><h2>Counter: 0</h2><h1>Hi, I am lazy component exported as default</h1></div>`);
-            done();
-        }, 100);
+            done(); 
+        });
        
     });
 
@@ -32,7 +32,7 @@ describe('Counter', () => {
             .toBe(`<div><h2>Counter: 0</h2><h1>Hi, I am lazy component exported as default</h1></div>`);
             deepRender.unmount();
             done();
-        }, 100);
+        });
       
     });
 });
