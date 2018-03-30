@@ -1,7 +1,30 @@
 /* eslint-disable no-var, strict */
 'use strict';
 
-var webpackConfig = require('./webpack.config.js')('prod');
+const webpackConfig = require('./webpack.config.js')('prod');
+const merge  = require('webpack-merge');
+const webpackConfigModule = {
+  rules: [
+    {
+      test: /\.tsx?$/,
+      use: [
+          { loader: 'ts-loader',
+          options: {
+              happyPackMode: true,
+              transpileOnly: true
+          } 
+      }
+      ],
+      exclude: [/node_modules/],
+    },
+    { test: /\.(css|less|scss)$/, loader: 'ignore-loader' },
+    {
+      test: /\.html$/,
+        loader: 'raw-loader',
+        exclude: /node_modules/
+    }
+]
+};
 
 module.exports = function(config) {
   // Documentation: https://karma-runner.github.io/0.13/config/configuration-file.html
@@ -25,7 +48,7 @@ module.exports = function(config) {
 
     webpack: {
       devtool: 'inline-source-map',
-      module: webpackConfig.module,
+      module: webpackConfigModule,
       resolve: webpackConfig.resolve
     },
 

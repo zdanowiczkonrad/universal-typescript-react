@@ -13,10 +13,11 @@
     },
     "allowSyntheticDefaultImports": true, // no errors on commonjs default import
     "target": "es5",
+    "module": "esnext", // required for just leaving the import() for the webpack to take care of
     "downlevelIteration": true,
     "importHelpers": true,
     "sourceMap": true,
-    "module": "esnext",
+
     "moduleResolution": "node",
     "jsx": "react",
     "allowJs": true, // allows imnporting JS files

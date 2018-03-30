@@ -1,6 +1,6 @@
 import Loadable from 'react-loadable';
 import * as React from 'react';
-import LazyComponents from '@/LazyComponents';
+
 /**
  * Using a raw require.ensure
  * But may use babel-plugin-dynamic-import-node
@@ -16,13 +16,7 @@ import LazyComponents from '@/LazyComponents';
 // } );
 
 const Loader = Loadable({
-  loader: (() => new Promise(resolve => {
-    if (module.hot) {
-      resolve(LazyComponents); 
-    } else {
-      require.ensure(['@/LazyComponents'], () => resolve(require('@/LazyComponents')));
-    }
-  }) as any),
+  loader: (() => import('./LazyComponents') as any),
   loading() {
     return <div>Loading default component...</div>;
   }
