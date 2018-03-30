@@ -4,13 +4,7 @@ import { connect } from 'react-redux';
 
 class LazyComponent extends React.Component<{ appName: string }, {}> {
     render() {
-        return <h1>{this.props.appName} Hi, I am lazy component exported as default!</h1>;
-    }
-}
-
-export class LazyComponentNamedExport extends React.Component<{}, {}> {
-    render() {
-        return <h1>Hi, I am a named lazy component</h1>;
+        return <h1>{this.props.appName} Hi, I am lazy component exported as default!1</h1>;
     }
 }
 
