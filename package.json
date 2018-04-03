@@ -1,6 +1,6 @@
 {
   "name": "universal-typescript-react",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "React + TypeScript + Webpack 4 + Karma + Enzyme + HMR",
   "scripts": {
     "start": "webpack-dev-server --mode development --config webpack.config.dev.js",
