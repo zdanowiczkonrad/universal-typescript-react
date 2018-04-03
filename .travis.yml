@@ -1,16 +1,1 @@
 language: node_js
-node_js:
-  - "node"
-  - "8"
-  dist: trusty
-addons:
-  chrome: stable
-sudo: required
-install:
-  - yarn install
-  - yarn build
-  - yarn add $TYPESCRIPT
-env:
-  - TYPESCRIPT=typescript@2.7.2
-  - TYPESCRIPT=typescript@2.7.0
-  - TYPESCRIPT=typescript@next
