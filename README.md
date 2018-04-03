@@ -1,5 +1,7 @@
 universal-typescript-react
 =====================
+[![Build Status](https://travis-ci.org/zdanowiczkonrad/universal-typescript-react.svg?branch=master)](https://travis-ci.org/zdanowiczkonrad/universal-typescript-react)
+
 Universal and up to date configuration with TypeScript and React and all modern frontend essentials,
 including dynamic imports, server-side rendering with prehydration and full hot module reload.
 Not forgetting about styles and all you need to develop webapps.
