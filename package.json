@@ -7,7 +7,7 @@
     "prebuild": "rimraf dist",
     "build": "webpack --mode production --config webpack.config.js  -p --env=prod",
     "lint": "tslint -c tslint.json 'src/**/*.{ts,tsx}'",
-    "test": "karma start --reporters nyan,junit --single-run=true --browsers PhantomJS",
+    "test": "karma start --reporters mocha,junit --single-run=true --browsers PhantomJS",
     "test:chrome": "karma start --reporters nyan,junit --single-run=true --browsers Chrome",
     "test:watch": "karma start --reporters nyan --single-run=false --browsers Chrome",
     "server": "cd dist && python -m SimpleHTTPServer 8080",
