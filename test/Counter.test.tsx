@@ -19,7 +19,7 @@ describe('Counter', () => {
             .toBe(`<div><h2>Counter: 0</h2><h1>Yay, Redux! Hello from a lazily loaded component!</h1></div>`);
             deepRender.unmount();
             done();
-        });
+        }, 100);
       
     });
 });
