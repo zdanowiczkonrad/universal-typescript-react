@@ -46,6 +46,7 @@
     "@types/react-router": "^4.0.23",
     "@types/react-router-config": "^1.0.6",
     "@types/react-router-dom": "^4.2.5",
+    "@types/react-router-redux": "^5.0.13",
     "@types/serialize-javascript": "^1.3.2",
     "@types/webpack": "^4.1.2",
     "autoprefixer": "^8.2.0",

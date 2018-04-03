@@ -8,5 +8,7 @@ export class LazyComponent extends React.Component<{ appName: string }, {}> {
     }
 }
 
-const LazyComponent = connect((state: any) => ({appName: state.appName}))(LazyComponent);
-export default LazyComponent;
+const ConnectedLazyComponent = connect((state: any) => {
+    return ({appName: state.app.appName});
+})(LazyComponent);
+export default ConnectedLazyComponent;

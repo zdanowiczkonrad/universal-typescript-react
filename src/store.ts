@@ -1,5 +1,9 @@
-import { rootReducer } from '@/reducers';
+import { rootReducer, history } from '@/reducers';
 import { createStore, applyMiddleware, compose, Reducer } from 'redux';
+
+import { routerMiddleware } from 'react-router-redux';
+
+const RouterMiddleware = routerMiddleware(history);
 
 const composeEnhancers = (
   process.env.NODE_ENV === 'development' &&
@@ -9,12 +13,13 @@ const composeEnhancers = (
 export function configureStore(initialState?: any) {
   // configure middlewares
   const middlewares: any[] = [
-
+    RouterMiddleware
   ];
   // compose enhancers
   const enhancer = composeEnhancers(
     applyMiddleware(...middlewares)
   );
+
   // create store
   const storeWithHmr = createStore(
     rootReducer,

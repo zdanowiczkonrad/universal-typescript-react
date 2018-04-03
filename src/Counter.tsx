@@ -28,7 +28,7 @@ export default class Counter extends React.Component<{}, { counter: number }> {
   render() {
     return (
     <div>
-      <h2>Counter: {this.state.counter}</h2>
+      <h2>Counters: {this.state.counter}</h2>
       <PreloadedComponent/>
     </div>
     );

@@ -7,6 +7,9 @@ import '@/App.scss';
 import { Provider } from 'react-redux'; 
 import { store } from '@/store';
 import { hot } from 'react-hot-loader';
+import { Route } from 'react-router';
+import { ConnectedRouter } from 'react-router-redux';
+import { history } from '@/reducers';
 
 // If you use React Router, make this component
 // render <Router> with your routes. Currently,
@@ -17,7 +20,11 @@ import { hot } from 'react-hot-loader';
 const App = () => (
     <Layout>
     <Provider store={store}>
-      <Counter />
+    <ConnectedRouter history={history}>
+      <div>
+        <Route path="/" component={Counter}/>
+      </div> 
+      </ConnectedRouter>
     </Provider>
   </Layout>
 );
