@@ -4,6 +4,8 @@ universal-typescript-react
 
 [![npm version](https://badge.fury.io/js/universal-typescript-react.svg)](https://badge.fury.io/js/universal-typescript-react)
 
+[![Dependencies](https://david-dm.org/zdanowiczkonrad/universal-typescript-react.svg)](https://david-dm.org/zdanowiczkonrad/universal-typescript-react.svg)
+
 Universal and up to date configuration with TypeScript and React and all modern frontend essentials,
 including dynamic imports, server-side rendering with prehydration and full hot module reload.
 Not forgetting about styles and all you need to develop webapps.
