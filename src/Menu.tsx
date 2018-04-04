@@ -2,8 +2,6 @@ import * as React from 'react';
 import { Dispatch, connect } from 'react-redux';
 import { push } from 'react-router-redux';
 
-
-
 /* tslint:disable:no-console */
 const deferredOpenDemoPageAction = () => (dispatch: Dispatch<any>, getState: () => any) => {
   console.log('thunked action demo');

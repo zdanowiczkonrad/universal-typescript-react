@@ -31,8 +31,8 @@ Checklist
 * [x] Styles support (LESS/SASS)
 * [x] React Router
 * [x] Redux
-* [ ] Redux Thunk
-* [ ] Redux dev tools
+* [x] Redux Thunk
+* [x] Redux dev tools
 * [x] Universal rendering
 * [x] Redux state prehydration
 * [x] Server support for router paths

@@ -9,16 +9,17 @@ import * as serialize from 'serialize-javascript';
 // import * as webpackDevMiddleware from 'webpack-dev-middleware';
 // import * as webpackHotMiddleware from 'webpack-hot-middleware';
 
-import { Express, Response } from 'express-serve-static-core';
+import { Express, Response, Request } from 'express-serve-static-core';
 // import { StaticRouter } from 'react-router-dom';
 // import { matchRoutes, renderRoutes, MatchedRoute } from 'react-router-config';
-import App from '../src/App';
+import { App } from '../src/App';
 import { store } from './store';
 
 const indexFile: string = require('../dist/index.html');
 const app: Express = express();
 const port = process.env.PORT || 3000;
 import { JSDOM } from 'jsdom';
+import { push } from 'react-router-redux';
 
 const indexDocument = new JSDOM(indexFile).window.document;
 const scripts = Array.from(indexDocument.querySelectorAll('script')).map(script => script.src);
@@ -26,10 +27,12 @@ const styles = (Array.from(indexDocument.querySelectorAll('link[rel=stylesheet]'
 
 app.use(express.static('./dist'));
 
-app.get('*', (_, res: Response) => {
+app.get('/:routerPath', (req: Request, res: Response) => {
     store.dispatch({
         type: 'SERVER_PREHYDRATION'
     });
+    // set initial route to the store
+    store.dispatch(push('/' + req.params.routerPath));
     const reactAppElement: string = renderToString((
         <App/>    
     ));

@@ -1,13 +1,15 @@
+import { history } from './history';
 import { config } from './config';
-import { rootReducer, history } from '@/reducers';
+import { rootReducer } from '@/reducers';
 import { createStore, applyMiddleware, compose, Reducer } from 'redux';
 import thunk from 'redux-thunk';
 import { routerMiddleware } from 'react-router-redux';
+import { DevTools } from '@/DevTools';
 
 const RouterMiddleware = routerMiddleware(history);
 
 const composeEnhancers = (
-  process.env.NODE_ENV === 'development' &&
+  config.isDevelopment &&
   window && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
 ) || compose;
 
@@ -18,9 +20,13 @@ export function configureStore(initialState?: any) {
     thunk
   ];
   // compose enhancers
-  const enhancer = composeEnhancers(
-    applyMiddleware(...middlewares)
+  const enhancers = [applyMiddleware(...middlewares)].concat(
+    config.isDevelopment ? 
+      DevTools.instrument() :
+      []
   );
+  
+  const enhancer = composeEnhancers(...enhancers);
 
   // create store
   const storeWithHmr = createStore(

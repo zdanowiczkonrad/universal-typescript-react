@@ -46,6 +46,30 @@ module.exports = merge(commonConfig, {
   entry: [
     './src/index.tsx'
   ],
+  module: {
+      rules: [{
+          test: /\.tsx?$/,
+          exclude: /node_modules/,
+          use: [{
+              loader: "babel-loader",
+         
+              options: {
+                babelrc: true,
+              // This is a feature of `babel-loader` for Webpack (not Babel itself).
+              // It enables caching results in ./node_modules/.cache/babel-loader/
+              // directory for faster rebuilds.
+                cacheDirectory: true,
+                plugins: ['react-hot-loader/babel']
+              }
+            }, {
+              loader: 'ts-loader',
+              options: {
+                  happyPackMode: true,
+                  transpileOnly: true
+              }
+            }] 
+          }]
+  },
   devtool: 'inline-source-map',
   plugins: [
     new webpack.HotModuleReplacementPlugin(),

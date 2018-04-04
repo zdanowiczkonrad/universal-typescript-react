@@ -16,7 +16,7 @@ describe('Counter', () => {
         const deepRender = mount( <Provider store={store}><Counter /></Provider>);
         setTimeout(() => {
             expect(deepRender.html())
-            .toBe(`<div><h2>Counter: 0</h2><h1>Yay, Redux! Hello from a lazily loaded component!</h1></div>`);
+            .toBe(`<div class="counter"><h2>Counter: 0</h2><h1>Yay, Redux! Hello from a lazily loaded component!</h1></div>`);
             deepRender.unmount();
             done();
         }, 100);
