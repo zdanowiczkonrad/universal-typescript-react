@@ -32,12 +32,12 @@ Checklist
 * [x] React Router
 * [x] Redux
 * [x] Redux Thunk
-* [x] Redux dev tools
+* [x] Redux Dev Tools
 * [x] Universal rendering
 * [x] Redux state prehydration
 * [x] Server support for router paths
 * [x] Webpack Environment plugin
-* [x] Dynamic imports
+* [x] Dynamic imports (Loadable)
 * [ ] Sentry
 * [ ] Styleguidist
 
