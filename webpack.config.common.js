@@ -6,10 +6,6 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const SLASH_ESCAPE_LESS_WITH_EXTRACT_PLUGIN = "\\/\\/";
 
-// TODO later
-//const { FRONTEND_URL, BACKEND_URL, STRIPE_API_KEY }  = require('./env.config');
-
-
 module.exports = {
   resolve: {
     alias: {

@@ -10,10 +10,10 @@ import { Provider } from 'react-redux';
 import { store } from '@/store';
 import { Route } from 'react-router';
 import { ConnectedRouter } from 'react-router-redux';
-import { Demo } from '@/Demo';
 import { history } from '@/history';
 import { config } from '@/config';
 import { DevTools } from '@/DevTools';
+import { Demo } from '@/components/demo/Demo';
 
 // If you use React Router, make this component
 // render <Router> with your routes. Currently,
