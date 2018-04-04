@@ -33,7 +33,7 @@ Checklist
 * [x] Splitted configs
 * [x] Vendor bundle/chunks
 * [x] Styles support (LESS/SASS)
-* [ ] React router
+* [x] React router
 * [ ] Server support for router paths
 * [x] Redux
 * [ ] Webpack define plugin
