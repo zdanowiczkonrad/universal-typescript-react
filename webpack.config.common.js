@@ -136,12 +136,9 @@ module.exports = {
         tslint: true,
         checkSyntacticErrors: true,
         // watch: ['./src'] // optional but improves performance (fewer stat calls)
-      })
-    // new StyleLintPlugin(),
-    // new webpack.DefinePlugin({
-    //     FRONTEND_SERVER_URL: JSON.stringify(FRONTEND_URL),
-    //     PROXY_SERVER_URL: JSON.stringify(BACKEND_URL),
-    //     STRIPE_API_KEY: JSON.stringify(STRIPE_API_KEY)
-    // })
+    }),
+    new webpack.EnvironmentPlugin({
+        IS_BROWSER: "true"
+    })
   ]
 };
