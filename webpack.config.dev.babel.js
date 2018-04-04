@@ -6,8 +6,7 @@ const devConfig = require('./webpack.config.dev');
 
 /**
  * This configuration file is just an extention on top of the dev config
- * to enable full HMR experience. it is separated from the dev build
- * as it adds an overhead in the form of the babel transpilation
+ * to enable full HMR experience. Used as a default dev config
  */
 const tsxLoaderRule = {
   test: /\.tsx?$/,
