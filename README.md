@@ -1,5 +1,7 @@
-universal-typescript-react
+Universal TypeScript + React
 =====================
+Your React + TypeScript Swiss Army knife
+
 [![Build Status](https://travis-ci.org/zdanowiczkonrad/universal-typescript-react.svg?branch=master)](https://travis-ci.org/zdanowiczkonrad/universal-typescript-react) [![npm version](https://badge.fury.io/js/universal-typescript-react.svg)](https://badge.fury.io/js/universal-typescript-react) [![Dependencies](https://david-dm.org/zdanowiczkonrad/universal-typescript-react.svg)](https://david-dm.org/zdanowiczkonrad/universal-typescript-react.svg)
 
 Universal and up to date configuration with TypeScript and React and all modern frontend essentials,
