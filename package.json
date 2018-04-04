@@ -1,6 +1,6 @@
 {
   "name": "universal-typescript-react",
-  "version": "1.0.0-rc.2",
+  "version": "1.0.0",
   "description": "React + TypeScript + Webpack 4 + Karma + Enzyme + HMR",
   "scripts": {
     "**** DEVELOPMENT": "****",
