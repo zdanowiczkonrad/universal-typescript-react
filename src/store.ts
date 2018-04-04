@@ -1,3 +1,4 @@
+import { config } from './config';
 import { rootReducer, history } from '@/reducers';
 import { createStore, applyMiddleware, compose, Reducer } from 'redux';
 
@@ -37,5 +38,5 @@ export function configureStore(initialState?: any) {
 
   return storeWithHmr;
 }
-
-export const store = configureStore();
+const initialStateFromWindow = config.isBrowser ? window.__REDUX_STATE__ : {};
+export const store = configureStore(initialStateFromWindow);

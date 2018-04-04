@@ -5,7 +5,7 @@ https://github.com/lith-light-g/universal-react-redux-typescript-starter-kit
 import * as React from 'react';
 import { renderToString, renderToStaticMarkup } from 'react-dom/server';
 import * as express from 'express';
-// import * as serialize from 'serialize-javascript';
+import * as serialize from 'serialize-javascript';
 // import * as webpackDevMiddleware from 'webpack-dev-middleware';
 // import * as webpackHotMiddleware from 'webpack-hot-middleware';
 
@@ -13,6 +13,8 @@ import { Express, Response } from 'express-serve-static-core';
 // import { StaticRouter } from 'react-router-dom';
 // import { matchRoutes, renderRoutes, MatchedRoute } from 'react-router-config';
 import App from '../src/App';
+import { store } from './store';
+
 const indexFile: string = require('../dist/index.html');
 const app: Express = express();
 const port = process.env.PORT || 3000;
@@ -25,6 +27,9 @@ const styles = (Array.from(indexDocument.querySelectorAll('link[rel=stylesheet]'
 app.use(express.static('./dist'));
 
 app.get('*', (_, res: Response) => {
+    store.dispatch({
+        type: 'SERVER_PREHYDRATION'
+    });
     const reactAppElement: string = renderToString((
         <App/>    
     ));
@@ -36,21 +41,17 @@ app.get('*', (_, res: Response) => {
     // }
 
     res.send(`<!DOCTYPE html>${renderToStaticMarkup((
-        <html lang="fr">
+        <html>
             <head>
                 <title>App (prerender)</title>
                 {styles.map(style => <link rel="stylesheet" key={style} href={style}/>)}
             </head>
             <body>
                 <div id="root" dangerouslySetInnerHTML={{ __html: reactAppElement }} />
-                <pre>
-                
-                    </pre>
-                {/* <script src="https://cdn.polyfill.io/v2/polyfill.min.js" /> */}
-                {/* <script
+                <script
                     dangerouslySetInnerHTML={{ __html: `window.__REDUX_STATE__=${serialize(store.getState())}` }}
                     charSet="UTF-8"
-                /> */}
+                />
                 {scripts.map((script: string) => <script key={script} src={script}/>)}
             </body>
         </html>

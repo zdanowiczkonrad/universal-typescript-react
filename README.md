@@ -1,10 +1,6 @@
 universal-typescript-react
 =====================
-[![Build Status](https://travis-ci.org/zdanowiczkonrad/universal-typescript-react.svg?branch=master)](https://travis-ci.org/zdanowiczkonrad/universal-typescript-react)
-
-[![npm version](https://badge.fury.io/js/universal-typescript-react.svg)](https://badge.fury.io/js/universal-typescript-react)
-
-[![Dependencies](https://david-dm.org/zdanowiczkonrad/universal-typescript-react.svg)](https://david-dm.org/zdanowiczkonrad/universal-typescript-react.svg)
+[![Build Status](https://travis-ci.org/zdanowiczkonrad/universal-typescript-react.svg?branch=master)](https://travis-ci.org/zdanowiczkonrad/universal-typescript-react) [![npm version](https://badge.fury.io/js/universal-typescript-react.svg)](https://badge.fury.io/js/universal-typescript-react) [![Dependencies](https://david-dm.org/zdanowiczkonrad/universal-typescript-react.svg)](https://david-dm.org/zdanowiczkonrad/universal-typescript-react.svg)
 
 Universal and up to date configuration with TypeScript and React and all modern frontend essentials,
 including dynamic imports, server-side rendering with prehydration and full hot module reload.
@@ -34,14 +30,16 @@ Checklist
 * [x] Vendor bundle/chunks
 * [x] Styles support (LESS/SASS)
 * [x] React router
-* [ ] Server support for router paths
 * [x] Redux
-* [ ] Webpack define plugin
+* [ ] Redux thunk
 * [x] Universal rendering
+* [x] Redux state prehydration
+* [x] Server support for router paths
+* [x] Webpack Environment plugin
 * [x] Dynamic imports
 * [ ] Sentry
 * [ ] Styleguidist
-* [ ] Redux thunk
+
 
 ### Prerequisites
 
