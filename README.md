@@ -29,9 +29,10 @@ Checklist
 * [x] Splitted configs
 * [x] Vendor bundle/chunks
 * [x] Styles support (LESS/SASS)
-* [x] React router
+* [x] React Router
 * [x] Redux
-* [ ] Redux thunk
+* [ ] Redux Thunk
+* [ ] Redux dev tools
 * [x] Universal rendering
 * [x] Redux state prehydration
 * [x] Server support for router paths

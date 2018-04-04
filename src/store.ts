@@ -1,7 +1,7 @@
 import { config } from './config';
 import { rootReducer, history } from '@/reducers';
 import { createStore, applyMiddleware, compose, Reducer } from 'redux';
-
+import thunk from 'redux-thunk';
 import { routerMiddleware } from 'react-router-redux';
 
 const RouterMiddleware = routerMiddleware(history);
@@ -14,7 +14,8 @@ const composeEnhancers = (
 export function configureStore(initialState?: any) {
   // configure middlewares
   const middlewares: any[] = [
-    RouterMiddleware
+    RouterMiddleware,
+    thunk
   ];
   // compose enhancers
   const enhancer = composeEnhancers(
