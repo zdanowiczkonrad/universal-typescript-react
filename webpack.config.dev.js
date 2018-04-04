@@ -31,7 +31,7 @@ const commonConfig = require('./webpack.config.common');
 const { resolve }       = require('path');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
-module.exports = merge(commonConfig, {
+const config = merge.smart(commonConfig, {
   mode: "development",
   output: { // this looks identical for both 
       filename: '[name].js',
@@ -56,11 +56,6 @@ module.exports = merge(commonConfig, {
 
     new webpack.NoEmitOnErrorsPlugin(),
     // do not emit compiled assets that include errors
-
-    new ExtractTextPlugin({
-      filename: '[name].css',
-      allChunks: true
-  })
   ],
   devServer: {
     host: 'localhost',
@@ -73,3 +68,17 @@ module.exports = merge(commonConfig, {
     // enable HMR on the server
   }
 });
+
+
+const oneCssFileExtractTextPlugin = new ExtractTextPlugin({
+  filename: '[name].css',
+  allChunks: true
+});
+
+const configWithOneCss = Object.assign(config, {
+  plugins: config.plugins.filter(
+    plugin => plugin.constructor && plugin.constructor.name !== 'ExtractTextPlugin'
+  ).concat(oneCssFileExtractTextPlugin)}
+);
+
+module.exports = configWithOneCss;

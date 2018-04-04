@@ -3,8 +3,8 @@
   "version": "0.1.2",
   "description": "React + TypeScript + Webpack 4 + Karma + Enzyme + HMR",
   "scripts": {
-    "start": "webpack-dev-server --mode development --config webpack.config.dev.js",
-    "start:hmr": "webpack-dev-server --mode development --config webpack.config.dev.hmr.js",
+    "start": "webpack-dev-server --mode development --config webpack.config.dev.babel.js",
+    "start:no-babel": "webpack-dev-server --mode development --config webpack.config.dev.js",
     "prebuild": "rimraf dist",
     "build": "webpack --mode production --config webpack.config.js  -p --env=prod",
     "lint": "tslint -c tslint.json 'src/**/*.{ts,tsx}'",

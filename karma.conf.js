@@ -5,6 +5,11 @@ const webpackConfig = require('./webpack.config.js')('dev'); //prod was working 
 const merge  = require('webpack-merge');
 const webpack = require('webpack');
 
+/**
+ * We're overriding any loaders to achieve:
+ *  - removed css/less/sass style imports
+ *  - pure tsx compilation
+ */
 const webpackConfigModule = {
   rules: [
     {
