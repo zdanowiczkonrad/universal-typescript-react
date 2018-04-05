@@ -2,7 +2,6 @@ import { hot } from 'react-hot-loader';
 // Load React AFTER hot loader
 import * as React from 'react';
 import Layout from '@/Layout';
-import Counter from '@/Counter';
 import '@/App.css';
 import '@/App.less';
 import '@/App.scss';
@@ -15,7 +14,9 @@ import { config } from '@/config';
 import { DevTools } from '@/DevTools';
 import i18n from '@/i18n';
 import { I18nextProvider } from 'react-i18next';
-import Demo from '@/components/demo/Demo';
+import DemoContainer from '@/components/demo/Demo';
+import Counter from '@/Counter';
+import { MooProvider } from '@/context/Moo';
 
 // If you use React Router, make this component
 // render <Router> with your routes. Currently,
@@ -26,15 +27,17 @@ import Demo from '@/components/demo/Demo';
 export const App = () => (
   <I18nextProvider i18n={i18n}>
     <Provider store={store}>
+    <MooProvider>
        <Layout>
         <ConnectedRouter history={history}>
           <div>
             <Route path="/counter" index={true} component={Counter}/>
-            <Route path="/demo" component={Demo}/>
+            <Route path="/demo" component={DemoContainer}/>
           </div> 
         </ConnectedRouter>
         {config.isDevelopment && <DevTools/>}
       </Layout>
+      </MooProvider>
     </Provider>
   </I18nextProvider>
 );

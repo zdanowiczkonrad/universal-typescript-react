@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { sum } from '@/calculator/Calculator';
-import { PreloadedComponent, PreloadedComponentLoader } from '@/PreloadedComponent';
+import { PreloadedComponent } from '@/PreloadedComponent';
 
 export default class Counter extends React.Component<{}, { counter: number }> {
   interval: number;
@@ -18,9 +18,6 @@ export default class Counter extends React.Component<{}, { counter: number }> {
   }
 
   tick = () => {
-    if (this.state.counter >= 6) {
-      PreloadedComponentLoader.preload();
-    }
     this.setState({ counter: sum(this.state.counter, 2) });
   }
 
@@ -32,7 +29,7 @@ export default class Counter extends React.Component<{}, { counter: number }> {
     return (
     <div className="counter">
       <h2>Counter: {this.state.counter}</h2>
-      {this.state.counter > 10 && <PreloadedComponent/>}
+      <PreloadedComponent/>
     </div>
     );
   }

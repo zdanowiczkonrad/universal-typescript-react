@@ -47,7 +47,7 @@
         "no-arg": true,
         "no-bitwise": true,
         "no-console": [
-            true,
+            true, 
             "log",
             "error",
             "debug",
