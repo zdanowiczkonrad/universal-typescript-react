@@ -96,8 +96,7 @@ yarn ssr-server
 ```
 
 Todos:
-
-[ ] Check preload dynamic imports with Loadable on the server side and in tests
-[ ] Hot reload of styles in the styleguidist (to avoid manual refresh css)
-[ ] Consider hot reload of styles in the HMR mode
-[ ] Loadable prefetch
+* [x] Check preload dynamic imports with Loadable on the server side and in tests
+* [ ] Hot reload of styles in the styleguidist (to avoid manual refresh css)
+* [ ] Consider hot reload of styles in the HMR mode
+* [ ] Loadable prefetch
