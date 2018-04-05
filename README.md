@@ -40,7 +40,7 @@ Quick checklist:
 * [x] Webpack Environment plugin
 * [x] Dynamic imports (Loadable) 🎆
 * [x] Styleguidist
-
+* [x] i18next
 
 
 ### Prerequisites

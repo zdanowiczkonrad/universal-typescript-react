@@ -13,7 +13,9 @@ import { ConnectedRouter } from 'react-router-redux';
 import { history } from '@/history';
 import { config } from '@/config';
 import { DevTools } from '@/DevTools';
-import { Demo } from '@/components/demo/Demo';
+import Demo from '@/components/demo/Demo';
+import i18n from '@/i18n';
+import { I18nextProvider } from 'react-i18next';
 
 // If you use React Router, make this component
 // render <Router> with your routes. Currently,
@@ -22,6 +24,7 @@ import { Demo } from '@/components/demo/Demo';
 // You can ignore this warning. For details, see:
 // https://github.com/reactjs/react-router/issues/2182
 export const App = () => (
+  <I18nextProvider i18n={i18n}>
     <Provider store={store}>
        <Layout>
         <ConnectedRouter history={history}>
@@ -33,6 +36,7 @@ export const App = () => (
         {config.isDevelopment && <DevTools/>}
       </Layout>
     </Provider>
+  </I18nextProvider>
 );
 
 /* this required to export a root component wrapped in a hot loader function */
