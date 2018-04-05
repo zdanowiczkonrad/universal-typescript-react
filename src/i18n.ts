@@ -32,7 +32,7 @@ i18n
     },
  
     react: {
-      wait: true
+      wait: false
     }
   });
  

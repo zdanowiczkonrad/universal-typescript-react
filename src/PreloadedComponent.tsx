@@ -1,7 +1,7 @@
 import Loadable from 'react-loadable';
 import * as React from 'react';
 
-const Loader = Loadable({
+export const PreloadedComponentLoader = Loadable({
   loader: (() => {
     return import('./LazyComponent') as any;
   }),
@@ -12,6 +12,6 @@ const Loader = Loadable({
 
 export class PreloadedComponent extends React.Component<{}, {}> {
   render() {
-    return <Loader/>;
+    return <PreloadedComponentLoader/>;
   }
 }

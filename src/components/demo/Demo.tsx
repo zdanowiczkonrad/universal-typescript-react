@@ -3,10 +3,7 @@ import './Demo.less';
 import { TranslationFunction } from 'i18next';
 import { translate } from 'react-i18next';
 
-/**
- * Demo properties.
- */
-interface IDemoProps {
+export interface IDemoProps {
   /** subtitle displayed underneath the demo components */
   subtitle?: string;
   /** t translation */
@@ -14,14 +11,15 @@ interface IDemoProps {
 }
 
 /**
- * Demo component.
+ * Demo component
  */
-class Demo extends React.Component<IDemoProps, {}> {
+export class Demo extends React.Component<IDemoProps, {}> {
 
   render() {
+  
     return (
     <div className="demo">
-      <h2>Demo component</h2>
+      <h1>Demo component</h1>
       {this.props.t('hello')}
       <small>{this.props.subtitle}</small>
     </div>
@@ -29,4 +27,12 @@ class Demo extends React.Component<IDemoProps, {}> {
   }
 }
 
-export default translate('translations')(Demo);
+/**
+ * Important. always split the default export of the component with a const variable 
+ * instead of inlining it to help Styleguidist interpret props & methods.
+ * 
+ * A rule of a thumb for components is to always export as default the component
+ * to have the consistency (but this is annoying)
+ */
+const WrappedDemo = translate('translations')(Demo);
+export default WrappedDemo;

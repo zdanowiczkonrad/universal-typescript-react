@@ -13,9 +13,9 @@ import { ConnectedRouter } from 'react-router-redux';
 import { history } from '@/history';
 import { config } from '@/config';
 import { DevTools } from '@/DevTools';
-import Demo from '@/components/demo/Demo';
 import i18n from '@/i18n';
 import { I18nextProvider } from 'react-i18next';
+import Demo from '@/components/demo/Demo';
 
 // If you use React Router, make this component
 // render <Router> with your routes. Currently,
