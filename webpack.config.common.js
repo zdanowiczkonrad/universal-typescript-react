@@ -126,7 +126,8 @@ module.exports = {
   },
   plugins: [
     new ExtractTextPlugin({
-        filename: '[name].[chunkhash].css'
+        filename: '[name].css?hash=[hash]',
+        allChunks: true
     }),
     new ForkTsCheckerWebpackPlugin({
         tslint: true,

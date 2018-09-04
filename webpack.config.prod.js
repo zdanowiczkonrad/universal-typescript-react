@@ -13,14 +13,26 @@ module.exports = merge(commonConfig, {
   devtool: 'source-map',
   optimization: {
     splitChunks: {
-      cacheGroups: {
-        commons: {
-            test: /[\\/]node_modules[\\/]/,
-            name: 'vendor',
-            chunks: 'all'
+      cacheGroups: { //https://github.com/webpack/webpack/tree/master/examples/multiple-entry-points
+				commons: {
+					name: "commons",
+					chunks: "initial",
+					minChunks: 2,
+					minSize: 0
+				}
+			}
+    },
+    occurrenceOrder: true, // To keep filename consistent between splits
+    minimizer: [
+      new UglifyJSPlugin({
+        sourceMap: true, // this is a bug in https://github.com/webpack/webpack/issues/6614#issuecomment-369376775
+        uglifyOptions: {
+          compress: {
+            drop_console: true,
+          }
         }
-      }
-    }
+      })
+    ]
   },
   plugins: [
     new ExtractTextPlugin({
